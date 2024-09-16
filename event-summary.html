@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        Final Dom Event Handlers
+    </h1>
+    <h3 id="handle-status">Default Text</h3>
+
+    <button onclick="hanleOnclick()">Handle event by add onclick function</button>
+    <button id="event-listener">Handle event by add addEventListener</button>
+
+
+    <!-- amra kono input box er value er man kono button a click korar por ta kono paragraph a dekhabo -->
+    <!-- amra kono input box er value er man kono button a click korar por ta kono paragraph a dekhabo -->
+
+    <p id="pragraph-value">default value man</p>
+    <input required type="text" id="input-box">
+    <button id="changeInput">Update</button>
+
+
+
+    <script>
+        function handleOnclick() {
+         const handleStatus = document.getElementById("handle-status").innerText = "Button clicked!";
+        }
+
+
+        // options:-2
+
+        document.getElementById("event-listener").addEventListener("click", function() {
+            const handleStatus = document.getElementById("handle-status").innerText = "Button clicked by addEventListener!";
+        });
+
+        // options:-3
+
+        document.getElementById("changeInput").addEventListener("click", function() {
+            const inputBoxValue = document.getElementById("input-box");
+            const inputValue = inputBoxValue.value;
+            
+
+
+            document.getElementById("pragraph-value").innerText = inputValue;
+            inputBoxValue.value = "";
+        })
+
+
+        
+    </script>
+    
+</body>
+</html>

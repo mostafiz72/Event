@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+
+        <h1>Explore Event Delegate</h1>
+        <input id="user-email" type="text">
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Laudantium, totam vel.</li>
+            <li class="item">Architecto, saepe reprehenderit.</li>
+            <li class="item">Enim, earum sequi.</li>
+            <li class="item">Ratione, non tenetur?</li>
+        </ul>
+        <button id="btn-add-item">Add item</button>
+    </section>
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for (const item of items) {
+        //     item.addEventListener('click', function(event) {   /// ekhane event bolte amara j ta te click korbo seita k bujhai
+        //         // console.log(event.target);   /// -------------- amara j li te click korbo seitar text paro 
+        //         // console.log(event.target.parentNode); /// ---------- amra j te click korbo seitar parent div ta pabo
+        //         event.target.parentNode.removeChild(event.target);    // ekhane j ta te click korbo seita remove hoye jabe [removechild mane kono parent div er mordhe theke ter kono clild k remove kora]
+                
+        //     });
+
+
+        document.getElementById('user-email').addEventListener('keyup', function(event) {  // keyup mane kono keyboard er kono key te click kora...
+            console.log(event.target.value);
+            
+        });
+
+
+        document.getElementById('list-container').addEventListener('click', function(event) {  // ekhane event mane j div or j li or etc j ta te click korbo seitai hobe event
+            event.target.parentNode.removeChild(event.target);
+        });
+
+
+
+            document.getElementById('btn-add-item').addEventListener('click', function() {
+             const listContainer = document.getElementById('list-container');
+
+             const li = document.createElement('li');
+             li.innerText = 'Brand  New Item added successfully';
+             li.classList.add('item');  /// ekhane li er mordhe ekta class add kora hoyse item namye
+             listContainer.appendChild(li);  // ui-listContainer er mordhe new li ta add kora hoyse ekhane j ta te click korbo seita new item add kora jabe [appendChild mane kono parent div er mordhe theke new child k add kora]
+            })
+
+
+            // ekhan ta amra ja shikte perlam -----------
+            // 
+        
+    </script>
+    
+</body>
+</html>
